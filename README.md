@@ -55,6 +55,5 @@ Skanuj kod QR przez aplikację Expo Go lub uruchom na emulatorze
 ---
 
 <div align="center">
-🧠 Autorzy
-Projekt prowadzony przez Makadami Studio
+🧠 Projekt prowadzony przez Makadami Studio
 </div>
