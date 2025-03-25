@@ -10,8 +10,8 @@ export const registerAuth = async (
   res: Response,
   next: NextFunction
 ): Promise<void> => {
-  const { email, password } = req.body;
-  if (!email || !password) {
+  const { name, email, password } = req.body;
+  if (!email || !password || !name) {
     res.status(400).json({ error: "Email and password required" });
     return;
   }
@@ -27,7 +27,7 @@ export const registerAuth = async (
     const passwordHash = await bcrypt.hash(password, saltRounds);
 
     const newUser = await prisma.user.create({
-      data: { email, password: passwordHash },
+      data: {name, email, password: passwordHash },
     });
     res.status(201).json({ message: "User created", user: newUser });
     return;
