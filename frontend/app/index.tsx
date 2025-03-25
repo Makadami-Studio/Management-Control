@@ -33,7 +33,7 @@ export default function Index() {
         source={require("@/assets/images/workTogether.png")}
         className="absolute bottom-0 self-center w-64 h-64"
         resizeMode="contain"
-      />{" "}
+      />
     </SafeAreaView>
   );
 }
