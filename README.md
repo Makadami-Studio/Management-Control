@@ -45,7 +45,7 @@ npm install
 npm run dev
 #Domyślnie odpala się na http://localhost:3000
 ```
-👾See Prisma Studio:
+👾See Prisma Studio (check database to see how's working):
 ```bash
 npx prisma studio --port 5556 --browser none
 ```
