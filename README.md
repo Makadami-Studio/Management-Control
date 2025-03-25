@@ -30,7 +30,7 @@ Projekt ma na celu ułatwienie współpracy między domownikami przez przypomnie
 ### 🌐 Backend
 - [Express.js](https://expressjs.com/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [PostgreSQL](https://www.postgresql.org/) / MongoDB (to be decided)
+- [PostgreSQL](https://www.postgresql.org/)
 
 ---
 
