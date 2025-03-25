@@ -35,7 +35,7 @@ Projekt ma na celu ułatwienie współpracy między domownikami przez przypomnie
 ---
 
 ## 🚀 Uruchamianie projektu lokalnie
-
+---
 ### 🔧 Backend
 </div>
 
@@ -49,6 +49,7 @@ npm run dev
 ```bash
 npx prisma studio --port 5556 --browser none
 ```
+---
 
 📱 Frontend
 ```bash
