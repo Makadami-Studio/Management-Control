@@ -2,10 +2,13 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes";
+import { setupSwagger } from "./docs/swagger";
 
 dotenv.config();
 
 const app = express();
+
+setupSwagger(app);
 
 const env = process.env.NODE_ENV || "development";
 
@@ -35,6 +38,10 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use("/api/v1/auth", authRoutes);
+
+app.use("/api/v1/flat", )
+
+
 const PORT = process.env.PORT || 3000;
 
 app.get("/", (_req, res) => {
