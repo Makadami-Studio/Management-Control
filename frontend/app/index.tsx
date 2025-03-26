@@ -1,7 +1,7 @@
-import { Animated, Text, View, TouchableOpacity, Image } from "react-native";
+import {Animated, Text, View, TouchableOpacity, Image, TextInput} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
-import { useEffect, useRef } from "react";
+import {useEffect, useRef, useState} from "react";
 
 export default function Index() {
   const router = useRouter();
@@ -9,6 +9,7 @@ export default function Index() {
   const upslideAnim = useRef(new Animated.Value(-100)).current; //up slide ref
     const downslideAnim = useRef(new Animated.Value(100)).current; //down slide ref
   const fadeAnim = useRef(new Animated.Value(0)).current; //fade-in ref
+    const [name, setEmailorNameorPhone] = useState("");
 
   // animacje na wejscie
   useEffect(() => {
@@ -97,16 +98,30 @@ export default function Index() {
                   </View>
               </TouchableOpacity>
           {/* View dla buttonow */}
+
+              <View className="items-center justify-center mt-5 ">
+                  <Text className="text-1xl  whitespace-nowrap">
+                      You can also{/* Chiałem dać coś innego niż "You can also dokładnie ---or--- ale nwm czy to bedzie dobrze wygląać */}
+                  </Text>
+              </View>
+              <View className="w-2/3 gap-4">
+                  <TextInput
+                      value={name}
+                      onChangeText={setEmailorNameorPhone}
+                      placeholder="Phone, Email or Nickname" //może Name samo narazie jest Nickname
+                      className="px-4 py-3 text-base border border-gray-300 rounded-lg"
+                  />
+              </View>
           <View className=" items-center flex-1  justify-start  ">
             {/* Login btn */}
             <TouchableOpacity
                 onPress={() => {
                   router.push("/(auth)/login");
                 }}
-                className="px-6 py-3 mt-4 bg-buttonOne rounded-xl"
+                className="w-80 h-14 flex-row items-center justify-center  bg-buttonOne rounded-xl"
             >
-              <Text className="text-lg font-semibold text-white">
-                  Login
+              <Text className="text- font-semibold text-white">
+                  Next
               </Text>
             </TouchableOpacity>
             {/* Register btn */}
