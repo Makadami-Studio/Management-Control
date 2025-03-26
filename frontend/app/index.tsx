@@ -39,7 +39,7 @@ export default function Index() {
     <SafeAreaView className="flex-auto bg-white">
       {/* Main view */}
 
-      <View className="items-center justify-start flex-1 pt-8 mt-10">
+      <View className="items-center justify-start flex-1 mt-10">
         <Animated.View
           /* slide w Y            fade-in (opacity) */
           style={{
@@ -68,7 +68,7 @@ export default function Index() {
         <TouchableOpacity
           className="flex-row items-center justify-center w-80 h-14"
           onPress={() => {
-            router.push("/(dashboard)/main"); //narazie przerzuca testowo do maina pozdro #do zmiany :3
+            router.push("/(auth)/main"); //narazie przerzuca testowo do maina pozdro #do zmiany :3
           }}
         >
           <View className="flex-row items-center justify-center flex-shrink gap-1 py-4 text-base border w-80 border-third rounded-3xl">
@@ -100,14 +100,13 @@ export default function Index() {
           </View>
         </TouchableOpacity>
         {/* View dla buttonow */}
-        <Text className="mt-5 font-semibold text-secondary drop-shadow-xl">Email or phone numer:</Text>
-        <View className="flex flex-row items-center justify-start gap-6">
+        <View className="items-center justify-start flex-1 ">
           {/* Login btn */}
           <TouchableOpacity
             onPress={() => {
               router.push("/(auth)/login");
             }}
-            className="px-8 py-3 bg-buttonOne rounded-xl"
+            className="px-6 py-3 mt-4 bg-buttonOne rounded-xl"
           >
             <Text className="text-lg font-semibold text-white">Login</Text>
           </TouchableOpacity>
@@ -116,7 +115,7 @@ export default function Index() {
             onPress={() => {
               router.push("/(auth)/register");
             }}
-            className="px-6 py-3 bg-buttonTwo rounded-xl"
+            className="px-6 py-3 mt-4 bg-buttonTwo rounded-xl"
           >
             <Text className="text-lg font-semibold text-white">Register</Text>
           </TouchableOpacity>
