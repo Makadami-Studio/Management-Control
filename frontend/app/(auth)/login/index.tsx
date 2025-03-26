@@ -13,7 +13,7 @@ const Index = () => {
         <SafeAreaView className="flex-1 px-6 pt-10 bg-white">
             <View className="items-center justify-center flex-1 gap-6">
                 <Text className="text-3xl font-bold text-center text-gray-800">
-                    Login In
+                    Sign in
                 </Text>
 
                 <View className="w-2/3 gap-4">
