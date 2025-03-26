@@ -68,7 +68,7 @@ export default function Index() {
         <TouchableOpacity
           className="flex-row items-center justify-center w-80 h-14"
           onPress={() => {
-            router.push("/(auth)/main"); //narazie przerzuca testowo do maina pozdro #do zmiany :3
+            router.push("/(dashboard)/main"); //narazie przerzuca testowo do maina pozdro #do zmiany :3
           }}
         >
           <View className="flex-row items-center justify-center flex-shrink gap-1 py-4 text-base border w-80 border-third rounded-3xl">
