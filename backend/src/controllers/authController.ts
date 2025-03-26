@@ -54,6 +54,7 @@ export const loginAuth = async (
 
     if (!user) {
       res.status(401).json({ error: "Invalid email or password!" });
+      console.error("Invalid email or password!");
       return;
     }
 
