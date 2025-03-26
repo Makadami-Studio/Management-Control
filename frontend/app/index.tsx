@@ -40,12 +40,12 @@ export default function Index() {
       <SafeAreaView className="flex-auto bg-white">
         {/* Main view */}
 
-          <View className="items-center justify-start flex-1 mt-10">
+          <View className="items-center gap-2 mt-10">
             <Animated.View
                 /* slide w Y            fade-in (opacity) */
                 style={{ transform: [{ translateY: downslideAnim }], opacity: fadeAnim }}
             >
-                <Text className="text-4xl font-bold text-third drop-shadow-2xl ite">
+                <Text className="text-4xl font-bold text-third drop-shadow-2xl ">
                     Welcome To the
                 </Text>
             </Animated.View>
@@ -53,13 +53,17 @@ export default function Index() {
               /* slide w Y            fade-in (opacity) */
               style={{ transform: [{ translateY: upslideAnim }], opacity: fadeAnim }}
           >
-            {/* Text jako logo ;D */}
-            <Text className="text-4xl font-bold text-secondary drop-shadow-2xl">
+            <Text className="text-4xl font-bold text-secondary drop-shadow-2xl mb-20">
               Management Control
             </Text>
           </Animated.View>
           </View>
-          <View className="items-center justify-start flex-1 gap-5 ">
+          <View className="items-center justify-center ">
+              <Text className="text-2xl font-bold whitespace-nowrap">
+                  Sign in with
+              </Text>
+          </View>
+          <View className="items-center justify-start flex-1 gap-5 mt-3">
               <TouchableOpacity className="w-80 h-14 flex-row items-center justify-center"
                   onPress={() => {
                       router.push("/(auth)/main");  //narazie przerzuca testowo do maina pozdro #do zmiany :3
