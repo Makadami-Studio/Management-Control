@@ -121,7 +121,6 @@ export default function Index() {
         </View>
         <View className="w-2/3 gap-4">
           <TextInput
-
             value={name}
             onChangeText={setEmailorNameorPhone}
             placeholder="Phone, Email or Nickname" //może Name samo narazie jest Nickname
