@@ -4,6 +4,8 @@ using Microsoft.IdentityModel.Tokens;
 using ManagementControlAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Expressions;
+using ManagementControlAPI.Service;
+using ManagementControlAPI.Controllers;
 
 DotNetEnv.Env.Load(); // Loads .env
 
@@ -26,6 +28,7 @@ builder.Services.AddDbContext<DatabaseContext>(options =>
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddAuthorization();
+builder.Services.AddScoped<IFlatService, FlatService>();
 
 // JWT Secret .env
 var JWT_SECRET = Environment.GetEnvironmentVariable("JWT_SECRET");

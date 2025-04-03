@@ -40,6 +40,8 @@ namespace ManagementControlAPI.Controllers
                         user = _context.Users.FirstOrDefault(u => u.PhoneNumber == loginRequest.Identifier);
                   }
 
+                  // Check if the user exists and the password is correct
+                  // Use BCrypt to verify the password
                   if (user == null || !BCrypt.Net.BCrypt.Verify(loginRequest.Password, user.Password))
                         return Unauthorized(new { message = "Wrong login or password!" });
 
