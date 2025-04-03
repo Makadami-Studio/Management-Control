@@ -18,7 +18,6 @@ namespace ManagementControlAPI.Controllers
                   _context = context;
             }
 
-            private static int nextId = 1;
 
             [HttpGet("get")] // ==> localhost:3000/api/v1/user/get
             public IActionResult GetUsers()
@@ -29,7 +28,17 @@ namespace ManagementControlAPI.Controllers
             [HttpPost("login")] // ==> localhost:3000/api/v1/user/login
             public IActionResult Login([FromBody] Models.LoginRequest loginRequest)
             {
-                  var user = _context.Users.FirstOrDefault(u => u.Login == loginRequest.Login);
+                  User? user;
+
+                  // Check if the identifier is an email or phone number
+                  if (loginRequest.Identifier.Contains("@"))
+                  {
+                        user = _context.Users.FirstOrDefault(u => u.Email == loginRequest.Identifier);
+                  }
+                  else
+                  {
+                        user = _context.Users.FirstOrDefault(u => u.PhoneNumber == loginRequest.Identifier);
+                  }
 
                   if (user == null || !BCrypt.Net.BCrypt.Verify(loginRequest.Password, user.Password))
                         return Unauthorized(new { message = "Wrong login or password!" });
@@ -40,10 +49,18 @@ namespace ManagementControlAPI.Controllers
             [HttpPost("register")] // ==> localhost:3000/api/v1/user/register
             public IActionResult CreateUser([FromBody] User user)
             {
-                  user.Id = nextId++;
+                  // Check if the user already exists
+                  var existingUser = _context.Users.FirstOrDefault(u => u.Email == user.Email);
+                  if (existingUser != null)
+                  {
+                        return BadRequest(new { message = "Użytkownik z tym emailem już istnieje." });
+                  }
+
+                  // Hash the password and save the user
                   user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
                   _context.Add(user);
                   _context.SaveChanges();
+
                   return Created("", new { message = "Registered!", user });
             }
       }

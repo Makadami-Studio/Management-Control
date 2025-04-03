@@ -7,8 +7,7 @@ namespace ManagementControlAPI.Models
 {
     public class LoginRequest
     {
-        public string Login { get; set; } = string.Empty;
-/*         public string email { get; set; } = string.Empty; */ //TODO: MAKE LOGIN OR EMAIL 
+        public string Identifier { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
     }
 }
