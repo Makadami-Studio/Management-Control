@@ -12,5 +12,10 @@ namespace ManagementControlAPI.Data
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
 
         public DbSet<User> Users { get; set; }
-    }
+
+            internal object FirstOrDefault(Func<object, bool> value)
+            {
+                  throw new NotImplementedException();
+            }
+      }
 }

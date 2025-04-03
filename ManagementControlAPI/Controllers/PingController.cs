@@ -19,13 +19,20 @@ namespace ManagementControlAPI.Controllers
             _db = db;
         }
 
-        [HttpGet("db")]
+        [HttpGet("db")] // ==> localhost:3000/api/v1/ping/db
         public IActionResult CheckDbConnection()
         {
             try
             {
                 var canConnect = _db.Database.CanConnect();
-                return Ok(new { dbConnected = canConnect });
+                if (canConnect == true)
+                {
+                    return Ok(new { dbConnected = canConnect });
+                }
+                else
+                {
+                    return NotFound(new { dbConnected = canConnect });
+                }
             }
             catch (Exception ex)
             {

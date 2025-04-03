@@ -13,14 +13,15 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
 
 //
-if (connectionString == string.Empty)
+if (string.IsNullOrEmpty(connectionString))
 {
     throw new InvalidOperationException("CONNECTION STRING IS EMPTY!");
 }
 
 // Builder for db
 builder.Services.AddDbContext<DatabaseContext>(options =>
-    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+    options.UseNpgsql(connectionString)
+    );
 
 // Add services to the container.
 builder.Services.AddControllers();
