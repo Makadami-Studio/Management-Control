@@ -23,7 +23,7 @@ namespace ManagementControlAPI.Controllers
             [HttpGet("get")] // ==> localhost:3000/api/v1/user/get
             public IActionResult GetUsers()
             {
-                  return Ok(_context);
+                  return Ok(_context.Users.ToList());
             }
 
             [HttpPost("login")] // ==> localhost:3000/api/v1/user/login
@@ -43,6 +43,7 @@ namespace ManagementControlAPI.Controllers
                   user.Id = nextId++;
                   user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
                   _context.Add(user);
+                  _context.SaveChanges();
                   return Created("", new { message = "Registered!", user });
             }
       }
