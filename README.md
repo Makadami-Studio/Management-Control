@@ -33,32 +33,6 @@ Projekt ma na celu ułatwienie współpracy między domownikami przez przypomnie
 
 ---
 
-## 🚀 Uruchamianie projektu lokalnie
----
-### 🔧 Backend
-</div>
-
-```bash
-cd backend
-npm install
-npm run dev
-#Domyślnie odpala się na http://localhost:3000
-```
-👾See Prisma Studio:
-```bash
-npx prisma studio --port 5556 --browser none
-```
----
-
-📱 Frontend
-```bash
-cd frontend
-npm install
-npx expo start
-#Skanuj kod QR przez aplikację Expo Go lub uruchom na emulatorze
-```
----
-
 <div align="center">
 🧠 Projekt prowadzony przez Makadami Studio
 </div>
