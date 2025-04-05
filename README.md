@@ -28,7 +28,7 @@ Projekt ma na celu ułatwienie współpracy między domownikami przez przypomnie
 ---
 
 ### 🌐 Backend
-- [C#] (https://dotnet.microsoft.com/en-us/apps/aspnet/apis)
+- [C#](https://dotnet.microsoft.com/en-us/apps/aspnet/apis)
 - [PostgreSQL](https://www.postgresql.org/)
 
 ---
