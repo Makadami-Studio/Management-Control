@@ -28,8 +28,7 @@ Projekt ma na celu ułatwienie współpracy między domownikami przez przypomnie
 ---
 
 ### 🌐 Backend
-- [Express.js](https://expressjs.com/)
-- [TypeScript](https://www.typescriptlang.org/)
+- [C#] (https://dotnet.microsoft.com/en-us/apps/aspnet/apis)
 - [PostgreSQL](https://www.postgresql.org/)
 
 ---
